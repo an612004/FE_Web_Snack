@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Ăn Vặt Ngon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="website-title">Ăn Vặt Ngon 😋</h2>
+        <p class="slogan">Đăng nhập để khám phá thế giới đồ ăn vặt!</p>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="username">Tên người dùng:</label>
+                <input type="text" id="username" name="username" placeholder="Nhập tên người dùng của bạn" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu của bạn" required>
+            </div>
+            <button type="submit">Đăng nhập</button>
+            <div class="links">
+                <a href="#">Quên mật khẩu?</a>
+                <span>|</span> <a href="../login/register.html">Đăng ký ngay!</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<style>
+    body {
+    font-family: 'Nunito', sans-serif; /* Sử dụng font Nunito mềm mại hơn */
+    background: linear-gradient(to right bottom, #ffbe76, #f0932b); /* Nền gradient ấm áp */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Ngăn cuộn nếu có hiệu ứng */
+    position: relative;
+}
+
+/* Thêm các hình dạng ngẫu nhiên để tạo hiệu ứng vui mắt */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(50px); /* Làm mờ để trông mềm mại */
+}
+
+body::before {
+    width: 200px;
+    height: 200px;
+    background-color: #ffeaa7; /* Màu vàng nhạt */
+    top: 10%;
+    left: 15%;
+    animation: float1 10s ease-in-out infinite alternate;
+}
+
+body::after {
+    width: 150px;
+    height: 150px;
+    background-color: #fab1a0; /* Màu cam đào */
+    bottom: 15%;
+    right: 20%;
+    animation: float2 12s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 30px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float2 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, -20px); }
+    100% { transform: translate(0, 0); }
+}
+
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px; /* Bo tròn nhiều hơn */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Bóng đổ sâu hơn */
+    width: 380px; /* Rộng hơn một chút */
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Đảm bảo nằm trên các hình dạng background */
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi di chuột */
+}
+
+.website-title {
+    font-family: 'Pacifico', cursive; /* Font chữ viết tay cho tiêu đề */
+    font-size: 3em; /* Kích thước lớn hơn */
+    margin-bottom: 10px;
+    color: #e67e22; /* Màu cam tươi */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Thêm bóng chữ */
+}
+
+.slogan {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+.input-group {
+    margin-bottom: 25px; /* Khoảng cách lớn hơn */
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px; /* Khoảng cách lớn hơn */
+    color: #444;
+    font-weight: 700; /* Đậm hơn */
+    font-size: 1.1em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px; /* Padding lớn hơn */
+    border: 2px solid #fed330; /* Viền màu vàng ăn vặt */
+    border-radius: 8px; /* Bo tròn nhiều hơn */
+    box-sizing: border-box;
+    font-size: 17px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+.input-group input:focus {
+    border-color: #f0932b; /* Viền cam đậm khi focus */
+    box-shadow: 0 0 10px rgba(240, 147, 43, 0.2); /* Bóng mờ khi focus */
+    outline: none; /* Bỏ viền outline mặc định */
+}
+
+button {
+    background: linear-gradient(to right, #ffbe76, #f0932b); /* Nút gradient hấp dẫn */
+    color: white;
+    padding: 15px 25px; /* Padding lớn hơn */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.3em; /* Kích thước chữ lớn hơn */
+    font-weight: 700;
+    width: 100%;
+    margin-top: 25px;
+    transition: all 0.3s ease; /* Chuyển động mượt mà hơn */
+    box-shadow: 0 5px 15px rgba(240, 147, 43, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(to left, #ffbe76, #f0932b); /* Đảo ngược gradient khi hover */
+    transform: translateY(-3px); /* Nâng nút lên nhẹ */
+    box-shadow: 0 8px 20px rgba(240, 147, 43, 0.4);
+}
+
+.links {
+    margin-top: 30px; /* Khoảng cách lớn hơn */
+    font-size: 15px;
+    display: flex;
+    justify-content: center; /* Căn giữa các liên kết */
+    align-items: center;
+}
+
+.links a {
+    color: #f0932b; /* Màu cam đậm */
+    text-decoration: none;
+    margin: 0 12px; /* Khoảng cách giữa các liên kết */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.links a:hover {
+    color: #e67e22; /* Màu cam sáng hơn khi hover */
+    text-decoration: underline;
+}
+
+.links span {
+    color: #ccc; /* Màu phân cách */
+}
+</style>

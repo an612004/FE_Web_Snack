@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm - Thiên Đường Ăn Vặt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* TOÀN BỘ CSS BẠN CÓ Ở TRÊN (CẢ CSS CŨ VÀ CSS MỚI ĐƯỢC THÊM VÀO Ở BƯỚC 1) SẼ ĐẶT VÀO ĐÂY */
+        /* Ví dụ: */
+        :root {
+            --primary-color: #ff6347; /* Tomato */
+            --secondary-color: #ffd700; /* Gold */
+            --text-dark: #333;
+            --text-light: #fefefe;
+            --bg-light: #f9f9f9;
+            --border-color: #ddd;
+            --header-height: 80px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lexend Deca', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .section-spacing {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #e55338;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-add-to-cart {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            border: none;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border-radius: 25px;
+            margin-top: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #e5c300;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Header */
+        .main-header {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--header-height);
+        }
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .main-nav ul {
+            display: flex;
+        }
+
+        .main-nav ul li {
+            position: relative;
+            margin-left: 35px;
+        }
+
+        .main-nav ul li a {
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 10px 0;
+            display: block;
+        }
+
+        .main-nav ul li a:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .main-nav .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            z-index: 999;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .main-nav .dropdown li {
+            margin: 0;
+        }
+
+        .main-nav .dropdown li a {
+            padding: 12px 25px;
+            white-space: nowrap;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+        .main-nav .dropdown li a:hover {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            transform: none;
+        }
+
+        .main-nav ul li:hover > .dropdown {
+            display: block;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box {
+            position: relative;
+            margin-right: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            border: 1px solid var(--border-color);
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            width: 220px;
+            transition: width 0.3s ease, border-color 0.3s ease;
+            background-color: var(--bg-light);
+        }
+
+        .search-box input:focus {
+            width: 280px;
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(var(--primary-color), 0.3);
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            margin-left: -40px;
+            padding: 8px;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .search-box button:hover {
+            transform: scale(1.1);
+        }
+
+        .header-actions .cart-icon,
+        .header-actions .user-icon {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-left: 25px;
+            position: relative;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .header-actions .cart-icon:hover,
+        .header-actions .user-icon:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .cart-count {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            border: 2px solid #fff;
+        }
+
+        /* Hero Section (Swiper) */
+        .hero-section {
+            height: 650px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-slide {
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.6rem;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-content .btn {
+            animation: zoomIn 1.5s ease-out;
+        }
+
+        /* Swiper Navigation & Pagination */
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--text-light) !important;
+            --swiper-navigation-size: 30px;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: var(--primary-color) !important;
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: #fff;
+            padding: 60px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-top: -50px;
+            position: relative;
+            z-index: 500;
+            border-radius: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .service-item {
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-item i {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .service-item p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+
+        /* Section Title Style */
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            position: relative;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        /* Featured Products */
+        .featured-products {
+            background-color: var(--bg-light);
+            padding-bottom: 50px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding-bottom: 20px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .product-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .product-card .price {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* About Us Mini */
+        .about-us-mini {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .about-us-mini .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .about-us-mini .about-img {
+            flex: 1;
+            min-width: 300px;
+            max-width: 550px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            animation: fadeInRight 1s ease-out;
+        }
+
+        .about-us-mini .about-text {
+            flex: 2;
+            min-width: 300px;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .about-us-mini h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            position: relative;
+            color: var(--secondary-color);
+        }
+        .about-us-mini h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 80px;
+            height: 3px;
+            background-color: var(--text-light);
+        }
+
+        .about-us-mini p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+
+        .about-us-mini .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+        }
+
+        .about-us-mini .btn-primary:hover {
+            background-color: #e5c300;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: #f0f8ff;
+        }
+        .testimonial-slider .swiper-slide {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            margin: 0 10px;
+        }
+        .testimonial-slider img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid var(--primary-color);
+        }
+        .testimonial-slider p {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+        .testimonial-slider h4 {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        .testimonial-slider .swiper-pagination-bullet-active {
+            background-color: var(--primary-color) !important;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            background-color: #fff;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .blog-post {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .blog-post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .blog-post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+        .blog-post-content {
+            padding: 25px;
+        }
+        .blog-post-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        .blog-post-content p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .blog-post-content .read-more {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .blog-post-content .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Video Section */
+        .video-section {
+            background-color: #f0f0f0;
+            padding: 0;
+        }
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: 0 auto;
+            max-width: 900px;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .video-section .section-title {
+            margin-bottom: 80px;
+        }
+
+
+        /* Footer */
+        .main-footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .main-footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-col p,
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+
+        .social-icons a {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            margin-right: 18px;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .newsletter-form input {
+            width: calc(100% - 90px);
+            padding: 12px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            background-color: rgba(255,255,255,0.9);
+            color: var(--text-dark);
+        }
+
+        .newsletter-form button {
+            width: 90px;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #e55338;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.7);
+            margin-top: 30px;
+        }
+
+        /* Pop-up Modal */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            max-width: 500px;
+            animation: zoomIn 0.4s ease-out;
+        }
+
+        .popup-content .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .popup-content .close-btn:hover {
+            color: var(--primary-color);
+        }
+        .popup-content img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        .popup-content h3 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .popup-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #555;
+        }
+        .popup-content .btn {
+            font-size: 1.1rem;
+            padding: 12px 25px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-nav {
+                position: fixed;
+                top: var(--header-height);
+                left: -100%;
+                width: 70%;
+                height: calc(100vh - var(--header-height));
+                background-color: #fff;
+                box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+                transition: all 0.3s ease-in-out;
+                z-index: 990;
+                display: block;
+            }
+
+            .main-nav.active {
+                left: 0;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .main-nav ul li {
+                margin: 0;
+                margin-bottom: 15px;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .main-nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            .main-nav ul li a {
+                padding: 15px 0;
+                font-size: 1.1rem;
+            }
+
+            .main-nav .dropdown {
+                position: static;
+                box-shadow: none;
+                border-top: none;
+                border-radius: 0;
+                padding-left: 20px;
+                display: block;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+
+            .main-nav .dropdown.active {
+                max-height: 200px;
+            }
+
+
+            .main-nav .dropdown li a {
+                padding: 10px 0;
+                font-size: 1rem;
+            }
+
+            .main-header .container {
+                justify-content: space-between;
+            }
+
+            .logo {
+                margin-bottom: 0;
+                text-align: left;
+            }
+
+            .header-actions {
+                width: auto;
+                justify-content: flex-end;
+                margin-top: 0;
+            }
+            .search-box {
+                margin-right: 15px;
+            }
+            .search-box input {
+                width: 180px;
+            }
+            .search-box input:focus {
+                width: 220px;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-left: 20px;
+            }
+
+            .hero-section {
+                height: 500px;
+            }
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .hero-content p {
+                font-size: 1.3rem;
+            }
+
+            .section-spacing {
+                padding: 60px 0;
+            }
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 50px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+
+            .about-us-mini .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-us-mini .about-img {
+                max-width: 100%;
+                height: 300px;
+            }
+            .about-us-mini h2 {
+                font-size: 2.5rem;
+            }
+            .about-us-mini h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 400px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .services-section {
+                margin-top: -30px;
+                padding: 40px 0;
+            }
+            .service-item i {
+                font-size: 3rem;
+            }
+            .service-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-us-mini h2 {
+                font-size: 2rem;
+            }
+
+            .main-footer .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .social-icons {
+                justify-content: center;
+                display: flex;
+            }
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            .newsletter-form button {
+                margin-left: 0;
+            }
+            .popup-content {
+                margin: 20px;
+                padding: 30px;
+            }
+            .popup-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .popup-content p {
+                font-size: 1.1rem;
+            }
+
+            /* Adjust search box on very small screens */
+            .search-box input {
+                width: 140px;
+            }
+            .search-box input:focus {
+                width: 180px;
+            }
+            .header-actions .cart-icon,
+            .header-actions .user-icon {
+                margin-left: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo a {
+                font-size: 1rem;
+            }
+            .header-actions {
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .search-box {
+                width: 100%;
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+            .search-box input {
+                width: calc(100% - 40px);
+                padding: 10px;
+            }
+            .search-box button {
+                margin-left: -35px;
+            }
+            .header-actions .cart-icon,
+            .header-actions .user-icon,
+            .menu-toggle {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-card h3 {
+                font-size: 1.4rem;
+            }
+            .product-card .price {
+                font-size: 1.2rem;
+            }
+            .about-us-mini h2 {
+                font-size: 1.8rem;
+            }
+            .about-us-mini p {
+                font-size: 1rem;
+            }
+            .testimonial-slider .swiper-slide {
+                padding: 30px;
+            }
+            .blog-post-content h3 {
+                font-size: 1.3rem;
+            }
+            .popup-content {
+                padding: 25px;
+            }
+            .popup-content h3 {
+                font-size: 1.5rem;
+            }
+            .popup-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../Page/index.html">Ăn Vặt Xịn</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="main-nav" id="main-nav-mobile">
+                <ul>
+                    <li><a href="../Page/index.html">Trang Chủ</a></li>
+                    <li>
+                        <a href="#">Danh Mục <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="../danhmuc/Doman.html">Đồ Mặn</a></li>
+                            <li><a href="../danhmuc/Dongot.html">Đồ Ngọt</a></li>
+                            <li><a href="../danhmuc/DoUong.html">Đồ Uống</a></li>
+                            <li><a href="../danhmuc/AnVatKhac.html">Ăn Vặt Khác</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../Page/about.html">Về Chúng Tôi</a></li>
+                    <li><a href="../Page/blog.html">Blog</a></li>
+                    <li><a href="../Page/contact.html">Liên Hệ</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <a href="../Cart/cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a href="#" class="user-icon">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-detail-section section-spacing">
+            <div class="container product-detail-container">
+                <div class="product-detail-image animate__animated animate__fadeInLeft">
+                    <img src="https://via.placeholder.com/500" alt="Tên Sản Phẩm">
+                </div>
+                <div class="product-detail-info animate__animated animate__fadeInRight">
+                    <h1 id="product-name">Bánh Tráng Cuộn Chấm Me</h1>
+                    <p class="price" id="product-price">75.000 VNĐ</p>
+                    <p class="description">
+                        Bánh tráng cuộn chấm me là món ăn vặt đặc trưng của ẩm thực Việt Nam, đặc biệt phổ biến ở miền Nam. Món này thu hút thực khách bởi hương vị chua, cay, mặn, ngọt hài hòa và sự kết hợp độc đáo giữa bánh tráng dẻo thơm cùng nước sốt me sánh mịn.
+                        <br><br>
+                        Sản phẩm của chúng tôi được làm từ nguyên liệu tươi ngon, đảm bảo vệ sinh an toàn thực phẩm. Thích hợp cho các buổi họp mặt bạn bè, xem phim hoặc nhâm nhi khi làm việc.
+                    </p>
+
+                    <div class="quantity-control">
+                        <label for="quantity">Số lượng:</label>
+                        <div class="quantity-input">
+                            <button id="decrease-quantity">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="99">
+                            <button id="increase-quantity">+</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary add-to-cart-btn" id="add-to-cart-btn">
+                        <i class="fas fa-shopping-cart"></i> Thêm vào giỏ hàng
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products section-spacing">
+            <h2 class="section-title animate__animated animate__fadeInUp">Sản Phẩm Liên Quan</h2>
+            <div class="container product-grid">
+                <div class="product-card animate__animated animate__fadeInUp">
+                    <img src="https://via.placeholder.com/300x220?text=Sản+Phẩm+1" alt="Sản Phẩm 1">
+                    <h3>Bánh Tráng Nướng</h3>
+                    <p class="price">40.000 VNĐ</p>
+                    <button class="btn btn-add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card animate__animated animate__fadeInUp animate__delay-0-2s">
+                    <img src="https://via.placeholder.com/300x220?text=Sản+Phẩm+2" alt="Sản Phẩm 2">
+                    <h3>Chè Thái</h3>
+                    <p class="price">35.000 VNĐ</p>
+                    <button class="btn btn-add-to-cart">Thêm vào giỏ</button>
+                </div>
+                <div class="product-card animate__animated animate__fadeInUp animate__delay-0-4s">
+                    <img src="https://via.placeholder.com/300x220?text=Sản+Phẩm+3" alt="Sản Phẩm 3">
+                    <h3>Trà Sữa Trân Châu</h3>
+                    <p class="price">45.000 VNĐ</p>
+                    <button class="btn btn-add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-col about-us">
+                <h4>Về Chúng Tôi</h4>
+                <p>Thiên Đường Ăn Vặt là điểm đến lý tưởng cho những tín đồ ẩm thực đường phố, mang đến trải nghiệm hương vị đa dạng và độc đáo.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col links">
+                <h4>Liên Kết Nhanh</h4>
+                <ul>
+                    <li><a href="../Page/index.html">Trang Chủ</a></li>
+                    <li><a href="#">Sản Phẩm</a></li>
+                    <li><a href="../Page/about.html">Về Chúng Tôi</a></li>
+                    <li><a href="../Page/blog.html">Blog</a></li>
+                    <li><a href="../Page/contact.html">Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-info">
+                <h4>Thông Tin Liên Hệ</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Đường Ăn Vặt, Quận 1, TP.HCM</p>
+                <p><i class="fas fa-phone"></i> 0123 456 789</p>
+                <p><i class="fas fa-envelope"></i> contact@anvatxin.com</p>
+            </div>
+            <div class="footer-col newsletter">
+                <h4>Đăng Ký Nhận Tin</h4>
+                <p>Nhận các ưu đãi và tin tức mới nhất từ chúng tôi!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn">
+                    <button type="submit">Đăng Ký</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Thiên Đường Ăn Vặt. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="popup-overlay" id="add-to-cart-popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Success Icon" style="width:90px;margin-bottom:18px;">
+            <h3 style="color:#2ecc71;">Thêm vào giỏ hàng thành công!</h3>
+            <p id="popup-product-info" style="margin-bottom:18px;"></p>
+            <a href="#" class="btn btn-primary" id="continue-shopping"><i class="fas fa-arrow-left mr-2"></i>Tiếp tục mua sắm</a>
+            <a href="../Cart/cart.html" class="btn btn-secondary"><i class="fas fa-shopping-cart mr-2"></i>Xem giỏ hàng</a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('main-nav-mobile').classList.toggle('active');
+        });
+
+        // Dropdown menu on mobile
+        document.querySelectorAll('.main-nav ul li a').forEach(item => {
+            if (item.nextElementSibling && item.nextElementSibling.classList.contains('dropdown')) {
+                item.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        this.nextElementSibling.classList.toggle('active');
+                    }
+                });
+            }
+        });
+
+        // Cập nhật số lượng sản phẩm trên icon giỏ hàng
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.querySelectorAll('.cart-count').forEach(el => el.textContent = count > 0 ? count : '0');
+        }
+
+        // Xử lý tăng/giảm số lượng
+        const decreaseBtn = document.getElementById('decrease-quantity');
+        const increaseBtn = document.getElementById('increase-quantity');
+        const quantityInput = document.getElementById('quantity');
+        decreaseBtn.addEventListener('click', () => {
+            let current = parseInt(quantityInput.value);
+            if (current > 1) quantityInput.value = current - 1;
+        });
+        increaseBtn.addEventListener('click', () => {
+            let current = parseInt(quantityInput.value);
+            quantityInput.value = current + 1;
+        });
+        quantityInput.addEventListener('change', () => {
+            if (parseInt(quantityInput.value) < 1 || isNaN(parseInt(quantityInput.value))) quantityInput.value = 1;
+        });
+
+        // Thêm vào giỏ hàng từ trang chi tiết
+        document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+            const name = document.getElementById('product-name').textContent.trim();
+            const price = document.getElementById('product-price').textContent.trim();
+            const img = document.querySelector('.product-detail-image img').src;
+            const quantity = parseInt(quantityInput.value);
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const found = cart.find(item => item.name === name);
+            if (found) {
+                found.quantity += quantity;
+            } else {
+                cart.push({ name, price, img, quantity });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+
+            // Hiện popup đẹp
+            document.getElementById('popup-product-info').innerHTML = `Bạn đã thêm <strong>${quantity}</strong> x <strong>${name}</strong> vào giỏ hàng.`;
+            document.getElementById('add-to-cart-popup').style.display = 'flex';
+        });
+
+        // Thêm vào giỏ hàng từ sản phẩm liên quan
+        document.querySelectorAll('.product-card .btn-add-to-cart').forEach((btn) => {
+            btn.addEventListener('click', function() {
+                const card = btn.closest('.product-card');
+                const name = card.querySelector('h3').textContent.trim();
+                const price = card.querySelector('.price').textContent.trim();
+                const img = card.querySelector('img').src;
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const found = cart.find(item => item.name === name);
+                if (found) {
+                    found.quantity += 1;
+                } else {
+                    cart.push({ name, price, img, quantity: 1 });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                document.getElementById('popup-product-info').innerHTML = `Bạn đã thêm <strong>1</strong> x <strong>${name}</strong> vào giỏ hàng.`;
+                document.getElementById('add-to-cart-popup').style.display = 'flex';
+            });
+        });
+
+        // Đóng popup
+        document.querySelector('.close-btn').onclick = function() {
+            document.getElementById('add-to-cart-popup').style.display = 'none';
+        };
+        document.getElementById('continue-shopping').onclick = function(e) {
+            e.preventDefault();
+            document.getElementById('add-to-cart-popup').style.display = 'none';
+        };
+        document.getElementById('add-to-cart-popup').onclick = function(e) {
+            if (e.target === this) this.style.display = 'none';
+        };
+
+        // Cập nhật số lượng khi tải trang
+        updateCartCount();
+    </script>
+</body>
+</html>

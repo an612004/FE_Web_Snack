@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký - Ăn Vặt Ngon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container"> <h2 class="website-title">Đăng Ký Tài Khoản 🤩</h2>
+        <p class="slogan">Tham gia ngay để nhận ưu đãi đặc biệt!</p>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="username">Tên người dùng:</label>
+                <input type="text" id="username" name="username" placeholder="Tên sẽ hiển thị của bạn" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email của bạn" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" placeholder="Mật khẩu của bạn" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Xác nhận mật khẩu:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập lại mật khẩu" required>
+            </div>
+            <button type="submit">Đăng Ký Ngay!</button>
+            <div class="links">
+                <a href="login.html">Đã có tài khoản? Đăng nhập!</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<style>
+    body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(to right bottom, #ffbe76, #f0932b);
+    display: flex;
+    /* justify-content: center; */ /* Bỏ thuộc tính này hoặc chỉ dùng cho chiều ngang */
+    align-items: flex-start; /* Thay đổi từ center thành flex-start để nội dung bắt đầu từ trên cùng */
+    padding: 20px; /* Thêm padding để nội dung không dính sát các cạnh khi cuộn */
+    min-height: 100vh;
+    margin: 0;
+    /* overflow: hidden; */ /* Bỏ thuộc tính này để cho phép cuộn */
+    position: relative;
+    box-sizing: border-box; /* Đảm bảo padding không làm tràn body */
+    overflow-y: auto; /* Cho phép cuộn dọc khi nội dung tràn */
+}
+
+/* Thêm các hình dạng ngẫu nhiên để tạo hiệu ứng vui mắt */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(50px);
+    z-index: 0; /* Đảm bảo các hình ảnh nằm dưới nội dung chính */
+}
+
+body::before {
+    width: 200px;
+    height: 200px;
+    background-color: #ffeaa7;
+    top: 10%;
+    left: 15%;
+    animation: float1 10s ease-in-out infinite alternate;
+}
+
+body::after {
+    width: 150px;
+    height: 150px;
+    background-color: #fab1a0;
+    bottom: 15%;
+    right: 20%;
+    animation: float2 12s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 30px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes float2 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-20px, -20px); }
+    100% { transform: translate(0, 0); }
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 380px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Đảm bảo nằm trên các hình dạng background */
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    margin: auto; /* Căn giữa container trong body flexbox */
+    margin-top: 50px; /* Thêm khoảng cách phía trên để không quá sát mép */
+    margin-bottom: 50px; /* Thêm khoảng cách phía dưới */
+}
+
+.login-container:hover {
+    transform: scale(1.02);
+}
+
+.website-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #e67e22;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.slogan {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    font-style: italic;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #444;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #fed330;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 17px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+}
+
+.input-group input:focus {
+    border-color: #f0932b;
+    box-shadow: 0 0 10px rgba(240, 147, 43, 0.2);
+    outline: none;
+}
+
+button {
+    background: linear-gradient(to right, #ffbe76, #f0932b);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(240, 147, 43, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(to left, #ffbe76, #f0932b);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(240, 147, 43, 0.4);
+}
+
+.links {
+    margin-top: 30px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links a {
+    color: #f0932b;
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.links a:hover {
+    color: #e67e22;
+    text-decoration: underline;
+}
+
+.links span {
+    color: #ccc;
+}
+</style>
